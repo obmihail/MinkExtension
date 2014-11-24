@@ -6,7 +6,7 @@
 
         <parameter key="behat.mink.driver.goutte.class">Behat\Mink\Driver\GoutteDriver</parameter>
         <parameter key="behat.mink.goutte.class">Behat\Mink\Driver\Goutte\Client</parameter>
-        <parameter key="behat.mink.guzzle.class">Guzzle\Http\Client</parameter>
+        <parameter key="behat.mink.guzzle.class">GuzzleHttp\Client</parameter>
         <parameter key="behat.mink.goutte.server_parameters" type="collection"></parameter>
         <parameter key="behat.mink.goutte.guzzle_parameters" type="collection"></parameter>
 
@@ -31,8 +31,8 @@
         </service>
 
         <service id="behat.mink.guzzle" class="%behat.mink.guzzle.class%">
-            <argument>null</argument>
             <argument>%behat.mink.goutte.guzzle_parameters%</argument>
+            <argument>null</argument>
         </service>
 
     </services>
